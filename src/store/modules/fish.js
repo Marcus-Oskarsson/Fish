@@ -21,7 +21,6 @@ export default {
   },
   getters: {
     fishesObj(state) {
-      // return state.fishes
       return state.fishes.map((fish) => {
         return {
           id: fish.id,
@@ -37,7 +36,6 @@ export default {
     },
     getFishById(state) {
       return function (id) {
-        console.dir(state.fishes.find((fish) => fish.id === id))
         return state.fishes.find((fish) => fish.id === id)
       }
     }

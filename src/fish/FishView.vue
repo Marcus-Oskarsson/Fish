@@ -1,12 +1,5 @@
 <template>
   <section class="col position-relative" :style="cssImageProps" ref="gameBoard">
-    <!-- <input
-      @click="goFish"
-      class="btn btn-lg btn-success position-absolute top-50 start-50 translate-middle"
-      type="button"
-      value="Kasta!"
-      :disabled="!isReady"
-    /> -->
     <FishFloat @on-click="goFish" :is-ready="isReady" />
   </section>
 </template>
@@ -79,7 +72,7 @@
         return Math.ceil(Math.random() * 3) > 1
       },
       sendNotification(text, duration = 2500) {
-        this.toast.success(`${text}`, {
+        this.toast(`${text}`, {
           timeout: duration
         })
       }

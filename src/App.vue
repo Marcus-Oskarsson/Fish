@@ -6,7 +6,7 @@
           <RouterLink class="nav-link" to="/"> Hem </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/fish"> Fiska? </RouterLink>
+          <RouterLink class="nav-link" to="/fish"> Fiska</RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" :to="`/profile/${user.id}`">
@@ -16,7 +16,7 @@
       </ul>
     </nav>
   </header>
-  <main class="test">
+  <main class="main">
     <RouterView name="sidebar" />
     <RouterView />
   </main>
@@ -36,9 +36,7 @@
 
 <style lang="scss">
   main {
-    min-height: 100vh; // TODO går ju att få till via js
-  }
-  .test {
+    min-height: 100vh;js
     display: flex;
     flex-direction: row;
   }

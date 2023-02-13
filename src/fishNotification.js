@@ -1,7 +1,7 @@
 export default {
-  transition: 'Vue-Toastification__bounce',
+  icon: false,
   maxToasts: 2,
   newestOnTop: true,
-  icon: false,
-  showCloseButtonOnHover: false
+  showCloseButtonOnHover: false,
+  transition: 'Vue-Toastification__bounce'
 }

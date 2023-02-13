@@ -17,7 +17,6 @@
     created() {
       const id = this.$route.params.id
       this.fish = this.getFishById(id)
-      console.log('fish in: ', this.fish)
     },
     data() {
       return {

@@ -9,11 +9,6 @@
         </div>
       </div>
     </article>
-    <!-- <article @focusout="closeModal" tabindex="0" ref="modal">
-      <h2>{{ fish.name }}</h2>
-      <img :src="fish.image.src" :alt="fish.image.alt" />
-      <p>{{ removeTags(fish.biology) }}</p>
-    </article> -->
   </div>
 </template>
 
@@ -53,7 +48,7 @@
     width: 100vw;
     min-height: calc(10rem + 100vh);
     background-color: #010101bb;
-    z-index: 1;
+    z-index: 10;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -70,9 +65,9 @@
     padding: 16px;
   }
 
-  // img {
-  //   width: 175px;
-  //   height: 175px;
-  //   max-width: 100%;
-  // }
+  img {
+    max-width: 100%;
+    max-height: 175px;
+    object-fit: contain;
+  }
 </style>

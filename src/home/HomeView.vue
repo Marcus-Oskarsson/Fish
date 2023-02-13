@@ -11,12 +11,9 @@
         v-model="name"
       />
       <p class="font-italic" v-if="typing">Skriver...</p>
-      <button class="btn btn-lg btn-success col-12 link" type="submit">
+      <button class="btn btn-lg btn-primary col-12 link" type="submit">
         Börja fiska!
       </button>
-      <!-- <RouterLink class="btn btn-lg btn-primary col-12 link" to="/fish">
-        Kasta loss
-      </RouterLink> -->
     </form>
   </div>
 </template>
@@ -34,6 +31,7 @@
           backgroundSize: 'cover'
         },
         name: null,
+        timer: null,
         typing: false
       }
     },
@@ -45,7 +43,11 @@
     },
     watch: {
       name(newName, oldName) {
+        if (this.timer) clearTimeout(this.timer)
         this.typing = newName && newName !== oldName
+        this.timer = setTimeout(() => {
+          this.typing = false
+        }, 3000)
       }
     }
   }
@@ -69,9 +71,11 @@
       }
     }
   }
-
   label,
-  p {
+  p,
+  .btn,
+  .btn:hover,
+  .btn:focus {
     color: $light;
   }
 </style>

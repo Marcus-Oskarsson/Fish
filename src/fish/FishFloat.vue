@@ -25,7 +25,9 @@
         cssPositionProps: {
           left: `${this.currentX}px`,
           top: `${this.currentY}px`
-        }
+        },
+        xInterval: null,
+        yInterval: null
       }
     },
     emits: {
@@ -47,12 +49,12 @@
       this.heightMax = this.$refs.float.offsetParent.clientHeight - elHeight
       this.currentX = Math.round(this.widthMax / 2)
       this.currentY = Math.round(this.heightMax / 2)
-      const xInterval = setInterval(() => {
+      this.xInterval = setInterval(() => {
         this.currentX += this.movementX
-      }, 25)
-      const YInterval = setInterval(() => {
+      }, 15)
+      this.YInterval = setInterval(() => {
         this.currentY += this.movementY
-      }, 25)
+      }, 15)
     },
     props: {
       isReady: {
@@ -73,6 +75,10 @@
           this.movementY = -this.movementY
         }
       }
+    },
+    beforeUnmount() {
+      clearInterval(this.xInterval)
+      clearInterval(this.yInterval)
     }
   }
 </script>
@@ -83,6 +89,6 @@
     position: absolute;
     width: 75px;
     height: 300px;
-    z-index: 10;
+    z-index: 9;
   }
 </style>
