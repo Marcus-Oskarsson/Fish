@@ -1,12 +1,13 @@
 <template>
-  <section class="col position-relative" :style="cssImageProps">
-    <input
+  <section class="col position-relative" :style="cssImageProps" ref="gameBoard">
+    <!-- <input
       @click="goFish"
       class="btn btn-lg btn-success position-absolute top-50 start-50 translate-middle"
       type="button"
       value="Kasta!"
       :disabled="!isReady"
-    />
+    /> -->
+    <FishFloat @on-click="goFish" :is-ready="isReady" />
   </section>
 </template>
 
@@ -14,11 +15,11 @@
   import { mapGetters } from 'vuex'
   import { useToast } from 'vue-toastification'
 
-  // import FishModal from './FishModal.vue'
-
+  import FishFloat from './FishFloat.vue'
   import image from '../images/fish2.jpg'
 
   export default {
+    components: { FishFloat },
     computed: {
       ...mapGetters({
         fishes: 'populateFish/fishesObj', //namn på alla fiskar :)
@@ -54,7 +55,6 @@
       },
       fishing() {
         if (this.isFishCought()) {
-          // TODO bryt ut. Vore ju enkelt med en game-instans?
           const fishId = Math.floor(Math.random() * this.fishes.length)
           const fish = this.fishNames[fishId]
           this.sendNotification(`Du fångade en ${fish}`, 3000)
@@ -83,9 +83,6 @@
           timeout: duration
         })
       }
-    },
-    watch: {
-      // TODO Kolla om anv. klickar på speciell -> Fiska!
     }
   }
 </script>
