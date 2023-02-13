@@ -36,7 +36,7 @@
 
 <style lang="scss">
   main {
-    min-height: 100vh;js
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
   }
