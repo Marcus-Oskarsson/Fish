@@ -3,8 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../home/HomeView.vue'
 import FishView from '../fish/FishView.vue'
 import FishInfo from '../fish/FishInfo.vue'
+import ProfileView from '../profile/ProfileView.vue'
 import SideBarFish from '../sidebar/SideBarFish.vue'
-import SideBarStandard from '../sidebar/SideBarStandard.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +23,16 @@ const router = createRouter({
     {
       component: FishInfo,
       path: '/fish/:id'
+    },
+    {
+      component: ProfileView,
+      path: '/profile/:id',
+      beforeEnter(to, from, next) {
+        // fantastisk koll här...
+        const isAuth = to.params.id.length > 30
+        if (isAuth) next()
+        else next('/')
+      }
     }
   ],
   linkActiveClass: 'active'
