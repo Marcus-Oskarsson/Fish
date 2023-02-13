@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 export default {
   getters: {
     // Som computed?
@@ -10,9 +12,9 @@ export default {
   },
   mutations: {
     addFish(state, fish) {
-      console.log('state before', state.catchedFish)
+      const catchedTime = moment()
+      fish.catchedTime = catchedTime
       state.catchedFish = [...new Set([...state.catchedFish, fish])]
-      console.log('state after', state.catchedFish)
     },
     removeFish(state, id) {
       state.catchedFish.filter((fish) => fish.id !== id)
