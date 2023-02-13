@@ -8,22 +8,35 @@
         <li class="nav-item">
           <RouterLink class="nav-link" to="/fish"> Fiska? </RouterLink>
         </li>
+        <li class="nav-item">
+          <RouterLink class="nav-link" :to="`/profile/${user.id}`">
+            Profil
+          </RouterLink>
+        </li>
       </ul>
     </nav>
   </header>
-  <main>
-    <!-- <RouterView name="sidebar" /> -->
+  <main class="test">
+    <RouterView name="sidebar" />
     <RouterView />
   </main>
 </template>
 
 <script>
-  export default {}
+  import { mapGetters } from 'vuex'
+
+  export default {
+    computed: {
+      ...mapGetters({
+        user: 'user/user'
+      })
+    }
+  }
 </script>
 
 <style lang="scss">
   main {
-    min-height: 100vh;
+    min-height: 100vh; // TODO går ju att få till via js
   }
   .test {
     display: flex;
