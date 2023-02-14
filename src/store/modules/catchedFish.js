@@ -21,7 +21,7 @@ export default {
   mutations: {
     addFish(state, fish) {
       const oldFish = state.catchedFish.find(
-        (oldFish) => oldFish.id === fish.id
+        (oldFish) => oldFish.name === fish.name
       )
       const catchedTime = moment()
       if (oldFish) {
