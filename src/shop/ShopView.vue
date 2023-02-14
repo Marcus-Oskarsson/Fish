@@ -3,7 +3,6 @@
     <div class="row">
       <h1>Fiskbutiken</h1>
     </div>
-    <!-- <div class="align-items-stretch"> -->
     <div class="align-items-stretch d-flex flex-wrap justify-content-between">
       <div class="card d-flex" :key="fish.id" v-for="fish in fishList" style="width: 18rem">
         <img class="card-img-top" :src="fish.image.src" :alt="fish.image.alt" />
@@ -12,7 +11,6 @@
           <p class="card-text">
             <pre>{{ fish }}</pre>
           </p>
-          <!-- <button class="btn btn-success">Sälj</button> -->
         </div>
         <div class="align-self-end button-group d-flex justify-content-between">
           <button @click="$store.commit('store/removeFish',fish.id)" class="btn btn-danger ">Ta bort</button>
@@ -21,7 +19,6 @@
         </div>
       </div>
     </div>
-    <!-- </div> -->
   </div>
 </template>
 
