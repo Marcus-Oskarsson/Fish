@@ -23,6 +23,7 @@ export default {
     fishesObj(state) {
       return state.fishes.map((fish) => {
         return {
+          biology: fish.Biology,
           id: fish.id,
           image: {
             src: fish['Species Illustration Photo'].src,
@@ -30,7 +31,7 @@ export default {
           },
           name: fish['Species Name'],
           points: fish.points,
-          biology: fish.Biology
+          price: Math.round(fish.points * 2.2)
         }
       })
     },

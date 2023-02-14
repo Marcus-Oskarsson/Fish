@@ -47,7 +47,7 @@
         this.typing = newName && newName !== oldName
         this.timer = setTimeout(() => {
           this.typing = false
-        }, 3000)
+        }, 2000)
       }
     }
   }

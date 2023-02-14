@@ -1,5 +1,7 @@
 <template>
-  <div class="container d-flex justify-content-center align-items-center">
+  <div
+    class="background-container container-fluid d-flex justify-content-center align-items-center"
+  >
     <div class="card mb-3" style="max-width: 540px">
       <div class="row g-0">
         <div class="col-md-4">
@@ -76,4 +78,9 @@
   }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  @import '../../assets/main.scss';
+  .background-container {
+    background-color: $water;
+  }
+</style>

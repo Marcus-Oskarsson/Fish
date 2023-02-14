@@ -3,10 +3,13 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/"> Hem </RouterLink>
+          <RouterLink class="nav-link" to="/">Hem</RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink class="nav-link" to="/fish"> Fiska</RouterLink>
+          <RouterLink class="nav-link" to="/fish">Fiska</RouterLink>
+        </li>
+        <li class="nav-item">
+          <RouterLink class="nav-link" to="/shop">Butik</RouterLink>
         </li>
         <li class="nav-item">
           <RouterLink class="nav-link" :to="`/profile/${user.id}`">
