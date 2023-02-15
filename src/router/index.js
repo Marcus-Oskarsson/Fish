@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 import HomeView from '../home/HomeView.vue';
 import FishView from '../fish/FishView.vue';
@@ -9,7 +9,7 @@ import SideBarShop from '../sidebar/SideBarShop.vue';
 import ShopView from '../shop/ShopView.vue';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes: [
     {
       component: HomeView,
