@@ -2,7 +2,7 @@ export default {
   mutations: {
     addFish(state, fish) {
       const fishInStore = state.selected.find(
-        (storeFish) => storeFish.id === fish.id,
+        (storeFish) => storeFish.name === fish.name,
       );
       if (fishInStore) {
         fishInStore.selectedAmount += 1;
