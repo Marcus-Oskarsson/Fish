@@ -24,35 +24,35 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex';
 
-  import FishModal from '../fish/FishModal.vue'
+  import FishModal from '../fish/FishModal.vue';
 
   export default {
     components: {
-      FishModal
+      FishModal,
     },
     computed: {
       ...mapGetters({
-        lastTenFishList: 'catchedFish/lastTenFish'
-      })
+        lastTenFishList: 'catchedFish/lastTenFish',
+      }),
     },
     data() {
       return {
         isModalOpen: false,
-        selected: null
-      }
+        selected: null,
+      };
     },
     methods: {
       closeModal() {
-        this.isModalOpen = false
+        this.isModalOpen = false;
       },
       openModal(fish) {
-        this.isModalOpen = true
-        this.selected = fish
-      }
-    }
-  }
+        this.isModalOpen = true;
+        this.selected = fish;
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>

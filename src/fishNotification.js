@@ -3,5 +3,5 @@ export default {
   maxToasts: 2,
   newestOnTop: true,
   showCloseButtonOnHover: false,
-  transition: 'Vue-Toastification__bounce'
-}
+  transition: 'Vue-Toastification__bounce',
+};

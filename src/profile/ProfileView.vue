@@ -36,46 +36,46 @@
 </template>
 <!-- https://robohash.org/test.png -->
 <script>
-  import moment from 'moment'
+  import moment from 'moment';
 
   export default {
     computed: {
       name() {
-        return this.$store.state.user.name
+        return this.$store.state.user.name;
       },
       catchedFish() {
-        return this.$store.state.catchedFish.catchedFish
+        return this.$store.state.catchedFish.catchedFish;
       },
       lastCatchedFish() {
-        return this.catchedFish[this.catchedFish.length - 1]
+        return this.catchedFish[this.catchedFish.length - 1];
       },
       level() {
         // level beroende på hur många steg i fibboncci.
-        let last = 8
-        let current = 13
-        let level = 0
+        let last = 8;
+        let current = 13;
+        let level = 0;
         while (this.xp > current) {
-          let temp = current
-          current += last
-          last = temp
-          level++
+          const temp = current;
+          current += last;
+          last = temp;
+          level += 1;
         }
-        return level
+        return level;
       },
       timeAgoText() {
         if (this.lastCatchedFish) {
-          const date = this.lastCatchedFish?.catchedTime
+          const date = this.lastCatchedFish?.catchedTime;
           return `Catched a ${this.lastCatchedFish.name}, ${moment(
-            date
-          ).fromNow()}.`
+            date,
+          ).fromNow()}.`;
         }
-        return 'No fish here.'
+        return 'No fish here.';
       },
       xp() {
-        return this.catchedFish.reduce((total, fish) => total + fish.points, 0)
-      }
-    }
-  }
+        return this.catchedFish.reduce((total, fish) => total + fish.points, 0);
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>

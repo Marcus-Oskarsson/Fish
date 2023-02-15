@@ -1,35 +1,28 @@
-# lab2
+# Fiskar
 
-This template should help get you started developing with Vue 3 in Vite.
+## Info
 
-## Recommended IDE Setup
+A short school project using Vue for the first time. Website is not responsive, so make sure to use a computer when visiting the site.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Technologies
 
-## Customize configuration
+- Vue
+- Vue-router
+- Vuex
+- Scss
+- Bootstrap
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## View the website live
 
-## Project Setup
+[View it live](https://marcus-oskarsson.github.io/)
 
-```sh
-npm install
-```
+## Key Features
 
-### Compile and Hot-Reload for Development
+A small fishing game, gain xp and level up while fishing. An example of a store frontend that displays the players catched fish.
+Vue-router handles different routes and makes sure the user enters a name before entering the profile page with a simple router guard.
 
-```sh
-npm run dev
-```
+## Project goals
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- Try out Vue
+- Use eslint and format code
+- Use standard features from Vue Options API

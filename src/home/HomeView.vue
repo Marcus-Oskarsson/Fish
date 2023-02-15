@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import image from '../images/background-startpage.png'
+  import image from '../images/background-startpage.png';
 
   export default {
     data() {
@@ -28,29 +28,29 @@
           backgroundImage: `url(${image})`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
         },
         name: null,
         timer: null,
-        typing: false
-      }
+        typing: false,
+      };
     },
     methods: {
       navigate() {
-        this.$store.commit('user/addUser', this.name)
-        this.$router.push('/fish')
-      }
+        this.$store.commit('user/addUser', this.name);
+        this.$router.push('/fish');
+      },
     },
     watch: {
       name(newName, oldName) {
-        if (this.timer) clearTimeout(this.timer)
-        this.typing = newName && newName !== oldName
+        if (this.timer) clearTimeout(this.timer);
+        this.typing = newName && newName !== oldName;
         this.timer = setTimeout(() => {
-          this.typing = false
-        }, 2000)
-      }
-    }
-  }
+          this.typing = false;
+        }, 2000);
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>

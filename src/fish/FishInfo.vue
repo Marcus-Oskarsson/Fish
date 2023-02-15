@@ -6,25 +6,25 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex';
 
   export default {
     computed: {
       ...mapGetters({
-        getFishById: 'populateFish/getFishById'
-      })
+        getFishById: 'populateFish/getFishById',
+      }),
     },
     created() {
-      const id = this.$route.params.id
-      this.fish = this.getFishById(id)
+      const { id } = this.$route.params;
+      this.fish = this.getFishById(id);
     },
     data() {
       return {
-        fish: {}
-      }
+        fish: {},
+      };
     },
-    methods: {}
-  }
+    methods: {},
+  };
 </script>
 
 <style lang="scss" scoped></style>
