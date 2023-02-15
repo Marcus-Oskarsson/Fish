@@ -5,29 +5,29 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-  import { useToast } from 'vue-toastification'
+  import { mapGetters } from 'vuex';
+  import { useToast } from 'vue-toastification';
 
-  import FishFloat from './FishFloat.vue'
-  import image from '../images/fish2.jpg'
+  import FishFloat from './FishFloat.vue';
+  import image from '../images/fish2.jpg';
 
   export default {
     components: { FishFloat },
     computed: {
       ...mapGetters({
-        fishes: 'populateFish/fishesObj', //namn på alla fiskar :)
-        getFishById: 'populateFish/getFishById'
+        fishes: 'populateFish/fishesObj', // namn på alla fiskar :)
+        getFishById: 'populateFish/getFishById',
       }),
       fishNames() {
-        return this.fishes.map((fish) => fish.name)
+        return this.fishes.map((fish) => fish.name);
       },
       catchedFish() {
-        return this.$store.state.catchedFish.catchedFish
-      }
+        return this.$store.state.catchedFish.catchedFish;
+      },
     },
     created() {
-      this.getFish()
-      this.toast = useToast()
+      this.getFish();
+      this.toast = useToast();
     },
     data() {
       return {
@@ -35,49 +35,49 @@
           backgroundImage: `url(${image})`,
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
         },
         isModalOpen: false,
         selected: null,
-        isReady: true
-      }
+        isReady: true,
+      };
     },
     methods: {
       closeModal() {
-        this.isModalOpen = false
+        this.isModalOpen = false;
       },
       fishing() {
         if (this.isFishCought()) {
-          const fishId = Math.floor(Math.random() * this.fishes.length)
-          const fish = this.fishNames[fishId]
-          this.sendNotification(`Du fångade en ${fish}`, 3000)
-          this.$store.commit('catchedFish/addFish', this.fishes[fishId])
+          const fishId = Math.floor(Math.random() * this.fishes.length);
+          const fish = this.fishNames[fishId];
+          this.sendNotification(`Du fångade en ${fish}`, 3000);
+          this.$store.commit('catchedFish/addFish', this.fishes[fishId]);
         } else {
-          this.sendNotification('Inget napp...', 3000)
+          this.sendNotification('Inget napp...', 3000);
         }
-        this.isReady = true
+        this.isReady = true;
       },
       getFish() {
-        this.$store.dispatch('populateFish/populatePond')
+        this.$store.dispatch('populateFish/populatePond');
       },
       goFish() {
         if (this.isReady) {
-          const time = Math.floor(Math.random() * 5) * 1000 + 2
-          this.sendNotification('Du metar en stund från bryggan...', time)
-          this.isReady = false
-          setTimeout(this.fishing, time)
+          const time = Math.floor(Math.random() * 5) * 1000 + 2;
+          this.sendNotification('Du metar en stund från bryggan...', time);
+          this.isReady = false;
+          setTimeout(this.fishing, time);
         }
       },
       isFishCought() {
-        return Math.ceil(Math.random() * 3) > 1
+        return Math.ceil(Math.random() * 3) > 1;
       },
       sendNotification(text, duration = 2500) {
         this.toast(`${text}`, {
-          timeout: duration
-        })
-      }
-    }
-  }
+          timeout: duration,
+        });
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>

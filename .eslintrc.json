@@ -6,10 +6,18 @@
     "eslint:recommended",
     "plugin:vue/base",
     "plugin:vue/vue3-essential",
-    "plugin:vue/vue3-strongly-recommended"
+    "plugin:vue/vue3-strongly-recommended",
+    "airbnb-base"
   ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["vue"],
   "root": true,
   "rules": {
+    "vue/script-indent": ["error", 2, { "baseIndent": 1 }],
+
     "vue/html-self-closing": [
       "warn",
       {
@@ -20,7 +28,16 @@
         }
       }
     ],
+    "no-param-reassign": "off",
     "vue/max-attributes-per-line": "off",
     "vue/singleline-html-element-content-newline": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.vue"],
+      "rules": {
+        "indent": "off"
+      }
+    }
+  ]
 }

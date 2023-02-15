@@ -23,10 +23,10 @@
   export default {
     computed: {
       fishList() {
-        return this.$store.state.store.selected
-      }
-    }
-  }
+        return this.$store.state.store.selected;
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>

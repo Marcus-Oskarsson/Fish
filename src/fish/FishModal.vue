@@ -15,29 +15,29 @@
 <script>
   export default {
     emits: {
-      closeModal: 'closeModal'
+      closeModal: 'closeModal',
     },
     mounted() {
-      this.$refs.modal.focus()
+      this.$refs.modal.focus();
     },
     props: {
       fish: {
         type: Object,
-        required: true
-      }
+        required: true,
+      },
     },
     methods: {
       closeModal() {
-        this.$emit('closeModal')
+        this.$emit('closeModal');
       },
       // Hämtade från https://www.geeksforgeeks.org/how-to-strip-out-html-tags-from-a-string-using-javascript/
       removeTags(str) {
-        if (str === null || str === '') return false
-        else str = str.toString()
-        return str.replace(/(<([^>]+)>)/gi, '')
-      }
-    }
-  }
+        if (str === null || str === '') return false;
+        str = str.toString();
+        return str.replace(/(<([^>]+)>)/gi, '');
+      },
+    },
+  };
 </script>
 
 <style lang="scss" scoped>

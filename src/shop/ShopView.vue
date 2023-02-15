@@ -13,9 +13,18 @@
           </p>
         </div>
         <div class="align-self-end button-group d-flex justify-content-between">
-          <button @click="$store.commit('store/removeFish',fish.id)" class="btn btn-danger ">Ta bort</button>
-          <!-- <span>0</span> -->
-          <button @click="$store.commit('store/addFish', fish)" class="btn btn-success">Lägg till</button>
+          <button
+            @click="$store.commit('store/removeFish',fish.id)"
+            class="btn btn-danger "
+          >
+            Ta bort
+          </button>
+          <button
+            @click="$store.commit('store/addFish', fish)"
+            class="btn btn-success"
+          >
+            Lägg till
+          </button>
         </div>
       </div>
     </div>
@@ -23,14 +32,15 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex';
+
   export default {
     computed: {
       ...mapGetters({
-        fishList: 'catchedFish/catchedFish'
-      })
-    }
-  }
+        fishList: 'catchedFish/catchedFish',
+      }),
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
