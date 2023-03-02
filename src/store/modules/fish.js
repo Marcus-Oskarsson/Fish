@@ -24,7 +24,7 @@ export default {
               src: error.message,
               alt: 'Gädda',
             },
-            points: '9000',
+            points: 9000,
             'Species Name': 'Gädda',
           };
           commit('addFishToPond', [extraFishInfo]);
