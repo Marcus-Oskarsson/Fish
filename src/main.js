@@ -7,5 +7,8 @@ import toastOptions from './fishNotification';
 import router from './router';
 import store from './store';
 
-createApp(App).use(router).use(store).use(Toast, toastOptions)
-  .mount('#app');
+const app = createApp(App);
+app.use(router);
+app.use(store);
+app.use(Toast, toastOptions);
+app.mount('#app');
